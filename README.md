@@ -19,7 +19,15 @@ This project is a Python utility designed to process raw, unstructured log files
 - Emails: Matches standard email formats.
 - Phones: Identifies 10-digit sequences (ignoring longer system codes).
 - Names: Identifies capitalized words, prioritizing explicit labels like "User:".
+
 2. Filtering Phase:
 Raw data is refined using a list comprehension: [user for user in data if 'gmail.com' in user['Email']].
+
 3. Storage Phase:
 The filtered data is sorted by Name and written to cleaned_users.csv with proper headers (Name, Email, Phone).
+
+
+## Contact
+If you have any questions or would like to discuss commercial licensing, feel free to reach out:
+
+LinkedIn: https://www.linkedin.com/in/prerna-pramod-671667301/
