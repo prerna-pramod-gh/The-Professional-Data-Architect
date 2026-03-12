@@ -14,15 +14,12 @@ This project is a Python utility designed to process raw, unstructured log files
 - Python 3.x
 - Modules: re (Regex), csv, os
 
-## How to Run
-
-1. **Clone the repository**:
-   ```bash
-   git clone <your-repo-url>
-   cd <your-repo-name>
-2. Create the Input File:
-Create a file named raw_data.txt in the root directory and paste the raw log data provided in the assignment.
-3. Run the Script:
-Execute the Python script from your terminal: python main.py
-5. Check the Output:
-6. Open the newly created cleaned_users.csv file to view the sorted, filtered user data.
+## Logic Breakdown
+1. Extraction Phase: The script scans every line using specific Regex patterns.
+- Emails: Matches standard email formats.
+- Phones: Identifies 10-digit sequences (ignoring longer system codes).
+- Names: Identifies capitalized words, prioritizing explicit labels like "User:".
+2. Filtering Phase:
+Raw data is refined using a list comprehension: [user for user in data if 'gmail.com' in user['Email']].
+3. Storage Phase:
+The filtered data is sorted by Name and written to cleaned_users.csv with proper headers (Name, Email, Phone).
